@@ -1,4 +1,4 @@
-# Roteiro para Montar Resposta
+# Roteiro para Montar Resposta Estudo de Caso Curso Especialista - BlueTeam
 
 # Preparação do script
 
