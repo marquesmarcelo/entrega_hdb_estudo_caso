@@ -35,4 +35,4 @@ $ su -
 
 3. Na sua máquina local criar um arquivo `.doc`, adicionar o conteúdo dos arquivos `linserver.txt` e `linclient.txt`, nesta ordem, e adicionar as imagens solicitadas nos locais indicados.
 
-4. Converter o arquivo em PDF e anexar no AVA
+4. Converter o arquivo em PDF e anexar no AVA.
