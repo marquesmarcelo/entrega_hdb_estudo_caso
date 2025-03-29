@@ -1,2 +1,2 @@
-./linserver.txt
-./linclient.txt
+# Outros padrões comuns (opcional)
+*.txt

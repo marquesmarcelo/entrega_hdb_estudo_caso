@@ -2,6 +2,7 @@
 
 # Nome dos arquivos de saída
 OUTPUT_FILE="linserver.txt"
+TEMP_FILE="temp.txt"
 
 # Solicita o nome do usuário
 read -p "Digite seu nome completo: " USER_NAME
@@ -14,7 +15,6 @@ IP_ADDRESS=$(hostname -I | awk '{print $1}')
 
 # Inicia a gravação do terminal
 script -q --return -c "  
-    echo
     echo '=== IDENTIFICACÃO ==='
     echo '  Nome do usuário: $USER_NAME'
     echo '  Nome da máquina virtual: $VM_NAME'
@@ -30,7 +30,7 @@ script -q --return -c "
     echo '1.2. Tabela do item 1.2.11.2 indicando as VLAN TAG e a Descrição'
     echo '>>> Coloque aqui a tabela'    
     echo
-    echo '== Passo 2.1. DNS: Primário e Secundário. =='
+    echo '== Passo 2.1. DNS: Primário =='
     echo
     echo '#Inicio Arquivo nsd.conf'
     cat /etc/nsd.conf
@@ -46,7 +46,7 @@ script -q --return -c "
     if [ -d ~/roles ]; then
         find ~/roles -type f | while read file; do
             echo
-            echo '#Conteúdo de: '\$file
+            echo '##Conteúdo de: '\$file
             cat \"\$file\"
         done
     else
@@ -79,8 +79,13 @@ script -q --return -c "
     echo '4.8.3. Na parte inferior da tela, a listagem de todos os últimos 10 logs capturados'
     echo '>>> Coloque aqui a imagem'
     echo
-    echo '== Relatorio da VM LinServer =='
-    echo '>>> Coloque aqui o conteúdo do arquivo texto gerado na VM LinServer'
-" "$OUTPUT_FILE"
+    echo '== Relatorio da VM LinClient =='
+    echo '>>> Coloque aqui o conteúdo do arquivo `linclient.txt` gerado na VM LinClient'
+" "$TEMP_FILE"
 
+# Filtra as linhas indesejadas e salva no arquivo final
+grep -v -e "Script started on" -e "Script done on" "$TEMP_FILE" > "$OUTPUT_FILE"
+rm -f "$TEMP_FILE"  # Remove o arquivo temporário
+
+echo
 echo "Relatório gerado: $OUTPUT_FILE"
