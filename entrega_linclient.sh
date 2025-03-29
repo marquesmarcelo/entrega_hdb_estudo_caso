@@ -16,13 +16,13 @@ script -q --return -c "
     echo    
     echo '#Inicio Arquivo nsd.conf'
     cat /etc/nsd.conf
-	echo '#Fim Arquivo nsd.conf'
+    echo '#Fim Arquivo nsd.conf'
     echo
     echo '#Inicio Arquivo unbound.conf'
     cat /etc/unbound.conf
-	echo '#Fim Arquivo unbound.conf'	
+    echo '#Fim Arquivo unbound.conf'	
 " "$OUTPUT_FILE"
 
 echo
 echo "Relatório gerado: $OUTPUT_FILE"
-echo "Adicionar este resultado ao final do arquivo linserver.sh"
+echo "Adicionar este resultado ao final do arquivo linserver.txt"
