@@ -13,9 +13,13 @@ VM_NAME=$(hostname)
 # Captura o IP da máquina (IPv4 principal)
 IP_ADDRESS=$(hostname -I | awk '{print $1}')
 
+# Captura a data e hora atual no formato desejado
+CURRENT_DATE=$(date "+%d/%m/%Y %H:%M:%S")
+
 # Inicia a gravação do terminal
 script -q --return -c "  
     echo '=== IDENTIFICACÃO ==='
+    echo '  Data e hora da geração: $CURRENT_DATE'
     echo '  Nome do usuário: $USER_NAME'
     echo '  Nome da máquina virtual: $VM_NAME'
     echo '  Endereço IP da máquina: $IP_ADDRESS'
