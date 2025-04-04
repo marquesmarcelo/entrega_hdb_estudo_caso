@@ -44,6 +44,15 @@ script -q --return -c "
     cat /etc/unbound.conf
     echo '#Fim Arquivo unbound.conf'
     echo
+    echo '2.2.11. Anexe, ao PDF da sua ENTREGA, o texto dos arquivos'
+    echo '#Inicio Arquivo nslcd.conf'
+    cat /etc/nslcd.conf
+    echo '#Fim Arquivo nslcd.conf'
+    echo
+    echo '#Inicio Arquivo ldapscripts.conf'
+    cat /etc/ldapscripts/ldapscripts.conf
+    echo '#Fim Arquivo ldapscripts.conf'
+    echo    
     echo '== Passo 3: Provisionamento e configuração automática de máquinas virtuais =='
     echo
     echo '#Listando conteúdo dos arquivos em ~/roles/ e subpastas'
